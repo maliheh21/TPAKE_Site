@@ -1,0 +1,266 @@
+body {
+        background: #353535;
+        font-family: Geneva, Arial, Helvetica, san-serif;
+        }
+        
+#container {
+        width: 750px;
+        margin: 0 auto;
+        background: #FFF url(images/containerbg.gif);
+        border-left: 5px solid #545454;
+        border-right: 5px solid #545454;
+        }
+        
+/* 
+_________________________________________________________________
+
+Header
+
+_________________________________________________________________
+*/
+
+h1 {
+        height: 40px;
+        background: url(images/h1bg.jpg);
+        font-size:22px;
+        font-weight:normal;
+        padding:22px 0 0 28px;
+        }
+
+h1 em {
+        font-style:normal;
+        color:#591212;
+        }
+        
+h2 {
+        height: 140px;
+        background: url(images/techno.jpg);
+        text-indent: -9999px;
+        border-bottom: 7px solid #EDEDED;
+        }
+        
+/* 
+_________________________________________________________________
+
+Content
+
+_________________________________________________________________
+*/
+
+#content {
+        width: 730px;
+        float: left;
+        margin: 5px;
+        margin-left: 13px;
+        }
+        
+/* 
+_________________________________________________________________
+
+Headers/Paragraph
+
+_________________________________________________________________
+*/
+
+h3 {
+        font-size: 24px;
+        color: #111;
+        border-bottom: 2px solid #111;
+        }
+        
+h4 {
+        font-size: 18px;
+        color: #4B0404;
+        margin: 15px 0 0 20px;
+        }
+        
+#content p {
+        font-size: 12px;
+        color: #070000;
+        margin: 5px 5px 5px 5px;
+        line-height: 20px;
+        border-left: 3px solid #141414;
+        padding-left: 5px;
+        }
+        
+#content p a{
+            olor: #671919;
+}
+        
+/* 
+_________________________________________________________________
+
+Navigation
+
+_________________________________________________________________
+*/
+
+#nav {
+        list-style-type: none;
+        width: 220px;
+        background: #141414;
+        float: right;
+        }
+        
+#nav li {
+        display: inline;
+        }
+        
+#nav a {
+        display: block;
+        height: 23px;
+        padding: 9px 0 0 10px;
+        font-size: 12px;
+        text-decoration: none;
+        color: #FFF;
+        border-bottom: 1px solid #090909;
+        }
+        
+#nav a:hover {
+        background: #242424;
+        }
+        
+/* 
+_________________________________________________________________
+
+Footer
+
+_________________________________________________________________
+*/
+
+address {
+        margin-top: -30px;
+        height: 24px;
+        margin: 0 auto;
+        background: #000011;
+        font-size: 12px;
+        color: #FFF;
+        width: 750px;
+        border-left: 5px solid #545454;
+        border-right: 5px solid #545454;
+        text-align: center;
+        padding-top: 6px;
+        }
+        
+address a {
+        color: #FFF;
+        }
+
+
+
+
+form{
+    padding: 0 10px 10px;
+}
+form label{
+    display: block;
+    color: #797979;
+    font-weight: 700;
+    line-height: 1.4em;
+}
+form input{
+    width: 220px;
+    padding: 6px;
+    color: #949494;
+    font-family: Arial,  Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    border: 1px solid #cecece;
+}
+form input.error{
+    background: #f8dbdb;
+    border-color: #e77776;
+}
+form  textarea{
+    width: 550px;
+    height: 80px;
+    padding: 6px;
+    color: #adaeae;
+    font-family: Arial,  Verdana, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    border: 1px solid #cecece;
+}
+form  textarea.error{
+    background: #f8dbdb;
+    border-color: #e77776;
+}
+form  div{
+    margin-bottom: 15px;
+}
+form  div span{
+    margin-left: 10px;
+    color: #b1b1b1;
+    font-size: 11px;
+    font-style: italic;
+}
+form div span.error{
+    color: #e46c6e;
+}
+form input.submit{
+    background: #6f9ff1;
+    color: #fff;
+    font-weight: 700;
+    font-style: normal;
+    border: 0;
+    cursor: pointer;
+}
+form input.submit.hover{
+    background: #79a7f1;
+}
+#error{
+    margin-bottom: 20px;
+    border: 1px solid #efefef;
+}
+#error ul{
+    list-style: square;
+    padding: 5px;
+    font-size: 11px;
+}
+#error ul li{
+    list-style-position: inside;
+    line-height: 1.6em;
+}
+#error ul li strong{
+    color: #e46c6d;
+}
+#error.valid ul li strong{
+    color: #93d72e;
+}
+/* 
+_________________________________________________________________
+
+Necessary styles/hacks
+
+_________________________________________________________________
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    }
+    
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+    font-size: 0;
+    }
+
+.clearfix {
+    display: inline;
+    }  
+
+    * html .clearfix {height: 1%;}
+    .clearfix {display: block;}
+    
+/* 
+_________________________________________________________________
+
+Body/Container
+
+_________________________________________________________________
+*/
+
