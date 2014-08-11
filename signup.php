@@ -79,7 +79,7 @@ else {
 	
 	echo '	<script type="text/javascript">	
 			// The ID of the extension we want to talk to.
-			var editorExtensionId = "dcabpgeddgajfemobjcmoceobjjnpbcm";
+			var editorExtensionId = "pcgdajlpaongdlncklnkoaomfkmebdnc";
 			
 			// Make a simple request:
 			chrome.runtime.sendMessage(editorExtensionId, {message1: '.$password.'}, function(response) {

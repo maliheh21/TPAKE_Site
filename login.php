@@ -38,6 +38,26 @@ else {
 	
 	$password = json_encode($_POST['password']);
 	
+	$SERVERIP = "192.168.1.153";
+	$SERVERPORT = 25012;
+	$WEBSERVERIP = "192.168.1.153";
+	$WEBSERVERPORT = 25006;
+	$CLIENTIP = "192.168.1.153";
+	$CLIENTPORT = 25008;
+	$DEVICEIP = "192.168.1.159";
+	$DEVICEPORT = 25010;
+	
+	echo '	<script type="text/javascript">	
+		// The ID of the extension we want to talk to.
+		var editorExtensionId = "pcgdajlpaongdlncklnkoaomfkmebdnc";
+		
+		// Make a simple request:
+		chrome.runtime.sendMessage(editorExtensionId, {message1: '.$password.'}, function(response) {
+				console.log(response.share);
+				// document.getElementById("response").value = response.share;
+		});
+		</script>';
+	
 	//send start command to application servers
 	if (!extension_loaded('sockets')) {
 	    die('The sockets extension is not loaded.');
@@ -49,13 +69,13 @@ else {
 	
 	// same socket will be later used in recv_from
 	// no binding is required if you wish only send and never receive	
-	if (!socket_bind($socket, '127.0.0.1', 25002))
+	if (!socket_bind($socket, $WEBSERVERIP, $WEBSERVERPORT))
 	        die("Unable to bind to webserver socket");
 			
 	$msg = "KeyExchange"; 
 	$len = strlen($msg);
 	// at this point 'server' process must be running and bound to receive from serv.sock
-	$bytes_sent = socket_sendto($socket, $msg, $len, 0, '127.0.0.1', 25004);
+	$bytes_sent = socket_sendto($socket, $msg, $len, 0, $SERVERIP, $SERVERPORT);
 	if ($bytes_sent == -1)
 	        die('An error occured while sending to the socket');
 	else if ($bytes_sent != $len)
@@ -77,16 +97,7 @@ else {
 	// close socket and delete own .sock file
 	socket_close($socket);
 	
-	echo '	<script type="text/javascript">	
-			// The ID of the extension we want to talk to.
-			var editorExtensionId = "dcabpgeddgajfemobjcmoceobjjnpbcm";
-			
-			// Make a simple request:
-			chrome.runtime.sendMessage(editorExtensionId, {message1: '.$password.'}, function(response) {
-					console.log(response.share);
-					// document.getElementById("response").value = response.share;
-			});
-			</script>';
+
 }
 
 ?>
