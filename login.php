@@ -22,6 +22,10 @@ $login = '
 				<label>Password: </label>
 				<input type = "password" name = "password" id = "password" />
 				<br/><br/>
+				<label>random: </label>
+				<input type = "text" name = "random" id = "random" />
+				<br/><br/>
+	
 				<input type = "submit" name = "login" id = "login" value ="login" />
 			</form>
 			
@@ -38,13 +42,13 @@ else {
 	
 	$password = json_encode($_POST['password']);
 	
-	$SERVERIP = "192.168.1.153";
+	$SERVERIP = "164.111.138.5";
 	$SERVERPORT = 25012;
-	$WEBSERVERIP = "192.168.1.153";
+	$WEBSERVERIP = "164.111.138.5";
 	$WEBSERVERPORT = 25006;
-	$CLIENTIP = "192.168.1.153";
+	$CLIENTIP = "164.111.138.5";
 	$CLIENTPORT = 25008;
-	$DEVICEIP = "192.168.1.159";
+	$DEVICEIP = "192.168.2.4";
 	$DEVICEPORT = 25010;
 	
 	echo '	<script type="text/javascript">	
@@ -53,8 +57,8 @@ else {
 		
 		// Make a simple request:
 		chrome.runtime.sendMessage(editorExtensionId, {message1: '.$password.'}, function(response) {
-				console.log(response.share);
-				// document.getElementById("response").value = response.share;
+				console.log(response.secretR);
+				document.getElementById("random").value = response.secretR;
 		});
 		</script>';
 	
