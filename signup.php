@@ -38,14 +38,15 @@ else {
 	
 	$password = json_encode($_POST['password']);
 	
-	$SERVERIP = "164.111.138.5";
+	$SERVERIP = "164.111.138.48";
 	$SERVERPORT = 25012;
-	$WEBSERVERIP = "164.111.138.5";
+	$WEBSERVERIP = "164.111.138.48";
 	$WEBSERVERPORT = 25006;
-	$CLIENTIP = "164.111.138.5";
+	$CLIENTIP = "164.111.138.48";
 	$CLIENTPORT = 25008;
-	$DEVICEIP = "164.111.137.148";
+	$DEVICEIP = "164.111.197.158";
 	$DEVICEPORT = 25010;
+	
 	
 	//send start command to application servers
 	if (!extension_loaded('sockets')) {

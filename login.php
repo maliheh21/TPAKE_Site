@@ -17,10 +17,10 @@ $login = '
 			<form action = "login.php" method ="post">
 				<br/><br/>
 				<label>Username: </label>							
-				<input type = "text" name = "username" id = "username" />
+				<input type = "text" name = "username" id = "username" value = "abcdefghijklmno"/>
 				<br/><br/>
 				<label>Password: </label>
-				<input type = "password" name = "password" id = "password" />
+				<input type = "password" name = "password" id = "password" value = "abcdefghijklmno"/>
 				<br/><br/>
 				<label>random: </label>
 				<input type = "text" name = "random" id = "random" />
@@ -42,25 +42,25 @@ else {
 	
 	$password = json_encode($_POST['password']);
 	
-	$SERVERIP = "164.111.138.5";
+	
+	$SERVERIP = "192.168.1.153";
 	$SERVERPORT = 25012;
-	$WEBSERVERIP = "164.111.138.5";
+	$WEBSERVERIP = "192.168.1.153";
 	$WEBSERVERPORT = 25006;
-	$CLIENTIP = "164.111.138.5";
+	$CLIENTIP = "192.168.1.153";
 	$CLIENTPORT = 25008;
-	$DEVICEIP = "192.168.2.4";
+	$DEVICEIP = "192.168.1.253";
 	$DEVICEPORT = 25010;
 	
-	echo '	<script type="text/javascript">	
-		// The ID of the extension we want to talk to.
-		var editorExtensionId = "pcgdajlpaongdlncklnkoaomfkmebdnc";
-		
-		// Make a simple request:
-		chrome.runtime.sendMessage(editorExtensionId, {message1: '.$password.'}, function(response) {
-				console.log(response.secretR);
-				document.getElementById("random").value = response.secretR;
-		});
-		</script>';
+	/*
+	$SERVERIP = "164.111.225.176";
+	$SERVERPORT = 25012;
+	$WEBSERVERIP = "164.111.225.176";
+	$WEBSERVERPORT = 25006;
+	$CLIENTIP = "164.111.225.176";
+	$CLIENTPORT = 25008;
+	$DEVICEIP = "164.111.197.158";
+	$DEVICEPORT = 25010; */
 	
 	//send start command to application servers
 	if (!extension_loaded('sockets')) {
@@ -101,6 +101,16 @@ else {
 	// close socket and delete own .sock file
 	socket_close($socket);
 	
+		echo '	<script type="text/javascript">	
+		// The ID of the extension we want to talk to.
+		var editorExtensionId = "pcgdajlpaongdlncklnkoaomfkmebdnc";
+		
+		// Make a simple request:
+		chrome.runtime.sendMessage(editorExtensionId, {message1: '.$password.'}, function(response) {
+				console.log(response.secretR);
+				document.getElementById("random").value = response.secretR;
+		});
+		</script>';
 
 }
 
